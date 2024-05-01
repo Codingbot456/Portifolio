@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      display: block;
+    }
+    #title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <h1 id="title">Your Frontend Development Portfolio</h1>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("canvas") });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+
+    const cubes = [];
+    const cubeCount = 100;
+
+    for (let i = 0; i < cubeCount; i++) {
+      const cube = new THREE.Mesh(geometry, material);
+      cube.position.set(
+        Math.random() * 10 - 5,
+        Math.random() * 10 - 5,
+        Math.random() * 10 - 5
+      );
+      cubes.push(cube);
+      scene.add(cube);
+    }
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0xffffff, 1);
+    pointLight.position.set(5, 5, 5);
+    scene.add(pointLight);
+
+    camera.position.z = 5;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      cubes.forEach(cube => {
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        cube.rotation.z += 0.01;
+      });
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    gsap.to("#title", {
+      duration: 2,
+      opacity: 1,
+      y: -50,
+      ease: "back.out(1)"
+    });
+  </script>
+</body>
+</html>
