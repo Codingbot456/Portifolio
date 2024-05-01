@@ -126,7 +126,7 @@ body{
     position: absolute;
     top: 0;
     z-index: -1000000;
-    background-color: red;
+    background-color: var(--background);
     position: fixed;
 }
 #threejs-canvas { /* Style for the canvas element */
