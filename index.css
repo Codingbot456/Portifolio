@@ -935,7 +935,7 @@ z-index: 23;
     width: 100%;
     position: absolute;
     z-index: -4;
-    aspect-ratio: 1;
+    object-fit:cover;
 
 }
     
