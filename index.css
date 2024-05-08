@@ -28,26 +28,26 @@ h1{
 }
 h2{
     color: var(--present);
-    font-size: 2.2em;
+    font-size: 2.5em;
     letter-spacing: 0.1em;
 
 
 }
 h3{
     color: var(--present);
-    font-size: 2em;
+    font-size: 2.3em;
     letter-spacing: 0.1em;
   
 }
 p1{
     color: var(--universalfont);
-    font-size: 1.3em;
+    font-size: 1.9em;
  
 
 }
 p2{
     color: var(--present);
-    font-size: 1.2em;
+    font-size: 1.5em;
 
 }
 p1::first-letter{
