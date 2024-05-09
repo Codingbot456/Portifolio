@@ -93,7 +93,7 @@ button:hover{
     }
 
 body{
-    background-color: var(--background);
+    background-color: white;
     overflow-x: hidden;
     line-height: 1.5;
     word-spacing: 0.15em;
