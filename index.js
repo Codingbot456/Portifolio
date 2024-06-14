@@ -75,12 +75,7 @@ const material1 = new THREE.MeshBasicMaterial({ color: "white", wireframe: true 
 const cubes = [];
 
 // Create seven cubes with different positions
-for (let i = 0; i < 7; i++) {
-    const cube = new THREE.Mesh(geometry1, material1);
-    cube.position.x = i * gap - 450;
-    scene.add(cube);
-    cubes.push(cube);
-}
+
 
 const controls = new THREE.OrbitControls(camera);
 controls.enableZoom = true;
@@ -160,9 +155,9 @@ function onScroll() {
     const scrollY = window.scrollY;
 
     // Adjust rotation of the main cube based on the scroll position
-    cube.rotation.x = scrollY * 0.001;
-    cube.rotation.y = scrollY * 0.001;
-    cube.rotation.z = scrollY * 0.001;
+    cube.rotation.x = scrollY * 0.0001;
+    cube.rotation.y = scrollY * 0.0001;
+    cube.rotation.z = scrollY * 0.0001;
 
     // Zoom in and out of the spheres during scroll
     const zoomFactor = 1 + Math.sin(scrollY * 0.01); // Adjust zoom factor as needed
@@ -183,20 +178,7 @@ function onScroll() {
     const colorChangeStep = window.innerHeight / 3;
     const currentColorStep = Math.floor(scrollY / colorChangeStep);
     const currentColor = new THREE.Color();
-    switch (currentColorStep) {
-        case 0:
-            currentColor.setRGB(1, 0, 0); // Red
-            break;
-        case 1:
-            currentColor.setRGB(0, 1, 0); // Green
-            break;
-        case 2:
-            currentColor.setRGB(0, 0, 1); // Blue
-            break;
-        default:
-            currentColor.setRGB(1, 1, 1); // White
-            break;
-    }
+   
     cubes.forEach(cube => {
         cube.material.color.copy(currentColor);
     });
@@ -288,20 +270,45 @@ res=>{
 .catch((err)=>console.log("err"))
 }
 
+// scripts.js
+const slides = document.querySelectorAll('.slide');
+const sliderWrapper = document.querySelector('.slider-wrapper');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const dots = document.querySelectorAll('.dot');
 
+let currentIndex = 0;
 
+function showSlide(index) {
+    if (index >= slides.length) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = slides.length - 1;
+    } else {
+        currentIndex = index;
+    }
+    sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateDots();
+}
 
+function updateDots() {
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentIndex].classList.add('active');
+}
 
+prevButton.addEventListener('click', () => {
+    showSlide(currentIndex - 1);
+});
 
+nextButton.addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+});
 
+dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+        const slideIndex = e.target.getAttribute('data-slide');
+        showSlide(parseInt(slideIndex));
+    });
+});
 
-
-
-
-
-
-
-
-
-
- 
+showSlide(currentIndex);

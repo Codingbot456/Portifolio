@@ -6,11 +6,12 @@
 
 
 :root{
-    --background:#000000;
-    --title:#6EC1E4;
-    --hover:#9a99ff;
-    --present:#ffffff;
-    --universalfont:#e6db74;
+    --background: #1A1A1A;
+    --title:#FFD700;
+    --hover:#E2725B;
+    --present:#CCCCCC;
+    --universalfont:#008080;
+
     
     
 }
@@ -22,26 +23,29 @@
 
 
 h1{
-    color: var(--universalfont);
+    color: var(--title);
     letter-spacing: 0.1em;
     
 }
 h2{
-    color: var(--present);
-    font-size: 2.2em;
+    color: var(--title);
+    font-size: 2.4em;
     letter-spacing: 0.1em;
 
 
 }
 h3{
     color: var(--present);
-    font-size: 2em;
+    font-size: 2.2em;
     letter-spacing: 0.1em;
   
 }
+p{
+    font-size: 1.6em;
+}
 p1{
-    color: var(--universalfont);
-    font-size: 1.3em;
+    color: var(--present);
+    font-size: 1.4em;
  
 
 }
@@ -51,7 +55,7 @@ p2{
 
 }
 button:hover{
-    background-color: red;
+    background-color:var(--hover);
     color: white;
     transition: .3s ease-in-out;
     border-radius: 9px;
@@ -68,7 +72,7 @@ button:hover{
  /* Hide the default scrollbar */
     body {
         scrollbar-width: thin;
-        scrollbar-color:red;
+        scrollbar-color:var(--hover);
     }
 
     /* Style the scrollbar */
@@ -162,10 +166,10 @@ body{
 .toggler-items{
    height: 70vh;
     min-width:100%;
-   color: var(--universalfont);
+   color: var(--title);
    position: absolute;
    z-index: 100000000;
-   background: rgba( 239, 4, 4, 0.1 );
+   background:var(--universalfont);
    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
    backdrop-filter: blur( 15px );
    -webkit-backdrop-filter: blur( 15px );
@@ -186,7 +190,7 @@ body{
    
 }
 .tog  ul li a{
-    color: var(--universalfont);
+    color: var(--title);
     list-style: none;
     text-decoration: none;
 }
@@ -217,8 +221,8 @@ body{
 .logo1,.logo3{
     display: grid;
     gap: 3px;
-    color: white;
-    border: 2px solid white;
+    color: var(--present);
+    border: 2px solid gray;
     border-left: none;
     border-top: none;
     border-bottom: none;
@@ -229,6 +233,12 @@ body{
 .logo2{
     margin-left: 24px;
     padding: 3px;
+}
+.logo2 p1{
+    font-size: 3em;
+    color: var(--universalfont);
+    background-color:var(--present);
+    margin-top: 0;
 }
 .logo1 ul{
     text-decoration: none;
@@ -254,7 +264,7 @@ body{
 
 }
 .hero .navbar ul li a{
-    color: var(--universalfont);
+    color: var(--title);
     list-style: none;
     text-decoration: none;
 }
@@ -315,8 +325,6 @@ body{
 }
 .box{
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: transparent;
     margin-top: 130px;
 }
@@ -332,7 +340,7 @@ body{
 }
 .inner:first-child{
     background-color:transparent;
-    color: red;
+    color: var(--hover);
     transform-origin: right;
     transform: perspective(100px) rotateY(-15deg);
 }
@@ -473,6 +481,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .abouts-info{
    display: grid;
    place-content: center;
+   gap: 10px;
    grid-auto-flow: column;
    margin-top: 5%;
 
@@ -488,12 +497,11 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: grid;
     place-content: center;
     width: 100%;
-
-   background: rgba( 239, 4, 4, 0.1 );
+   background-color: var(--universalfont);
+   color: var(--background);
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 15px );
 -webkit-backdrop-filter: blur( 15px );
-border-radius: 10px;
 border-left: 1px solid rgba( 255, 255, 255, 0.18 );
 
    
@@ -524,7 +532,7 @@ border-left: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .read button{
     background-color: var(--title);
-    color: var(--present);
+    color: var(--background);
     padding: 20px 40px;
     text-align: center;
     font-size: 1.5em;
@@ -534,8 +542,8 @@ border-left: 1px solid rgba( 255, 255, 255, 0.18 );
 
 }
 .read button:hover{
-    background-color: red;
-    color: white;
+    background-color: var(--hover);
+    color: var(--present);
     letter-spacing: .3px;
     border-radius: 10px;
     transition: .3s ease;
@@ -546,9 +554,9 @@ border-left: 1px solid rgba( 255, 255, 255, 0.18 );
 .portifolio{
     width: min(100%);
    padding-left: 51px;
-    text-align: center;
     margin-top: 30px;
     overflow: hidden;
+    display: grid;
     }
 .portifolio-info{
     text-align: center;
@@ -557,13 +565,16 @@ border-left: 1px solid rgba( 255, 255, 255, 0.18 );
     .portifolio::before{
         content: '{!}';
         padding: 3px;
-        color: white;
-        text-align: center;
+        color: var(--present);
+        text-align:center;
+        
+       
+
     }
     .portifolio>h2::before{
         content: '<';
         padding: 3px;
-        color: white;
+        color: var(--present);
        
     }
     .portifolio>h2::after{
@@ -572,66 +583,92 @@ border-left: 1px solid rgba( 255, 255, 255, 0.18 );
         color: white;
        
     }
-    .portifolio-projects{
-        padding: 20px;
-    }
+   
+.portfolio-projects {
+    width: 80%;
+    max-width: 800px;
+    margin:auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+   
+    position: relative;
+    margin-top: 40px;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  background:var(--present);
+    color: var(--background);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 30px;
+    
+}
+.slide p{
+    padding-left: 20px;
+}
+
+.portfolio-projects button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    color: var(--present);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.portfolio-projects button:hover{
+    background-color: var(--hover);
+    color:var(--background);
+}
+.PRO-BTN{
+    margin-top: 60px;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--hover);
+}
+.portifolio .read{
+    left: 42%;
+    position: relative;
+}
    
    
-   
-    .portifolio-projects >.projects >div{
-        background: rgba( 255, 255, 255, 0.1 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 15px );
-        -webkit-backdrop-filter: blur( 15px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        border: none;
-        border-bottom: 1.5px solid transparent;
-        border-image: linear-gradient(to left, transparent,grey);
-        border-image-slice: 1;
-        color:var(--present);
-        text-align: left;
-    }
-    .portifolio-projects >.projects >div:before{
-        content: "'";
-        color: red;
-        display: block;
-        font-size: 3em;
-        
-
-    }
-    .portifolio-projects >.projects >div:after{
-        content: "'";
-        color: red;
-        display: block;
-        font-size: 3em;
-
-    }
-
-    .one{
-        margin-top: 20%;
-        border: 2px solid var(--title) ;
-        padding: 10px;
-        display: grid;
-        place-content: center;
-       
-      
-    }
-    .projects{
-        display: grid;
-        grid-auto-flow: row;
-        gap: 40px;
-    }
-    .projects div{
-        background-color: black;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        display: grid;
-        place-content: center;
-        border: 2px solid white;
-
-    }
+    
     
 
     /*services*/
@@ -678,10 +715,11 @@ border-left: 1px solid rgba( 255, 255, 255, 0.18 );
        gap: 30px;
        padding: 30px;
        margin-top: 30px;
+    
     }
     .my-services div>h3{
-        background-color: white;
-        color: blue;
+        background-color: var(--universalfont);
+        color: var(--present);
     }
      .my-services div>h3::before{
         content: '{"';
@@ -888,10 +926,10 @@ border-left: 1px solid rgba( 255, 255, 255, 0.18 );
     }
     #tog{
         display: block;
-        color: red;
+        color:var(--present);
         height: 3em;
         padding: 10px;
-       background-color: red;
+       background-color: var(--hover);
        position:relative;
        z-index:1000px;
     }
@@ -915,6 +953,13 @@ width: 120%;
 justify-self: center;
 position: relative;
 z-index: 23;
+}
+.portifolio .read{
+    left: 12%;
+    position: relative;
+}
+p{
+    font-size: 1.2em;
 }
 }
 
@@ -1197,7 +1242,7 @@ align-items: center;
     margin-top: 3%;
 }
 .web div button:hover{
-    background-color:red;
+    background-color:var(--hover);
     color: white;
 }
 
