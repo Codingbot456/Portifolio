@@ -965,6 +965,9 @@ button.next {
     grid-auto-flow: row;
     
 }
+.about-infoo p1{
+    margin-top:10%;
+}
 .div1{
 width: 100%;
 justify-self: center;
