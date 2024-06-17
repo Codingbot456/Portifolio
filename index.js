@@ -197,7 +197,7 @@ gsap.to(".abouts",{
     scaleY:'1',
     scrollTrigger:{
     trigger:'.abouts',
-    start:"top 70%", //you can also use percentages or keywords//
+    start:"top 100%", //you can also use percentages or keywords//
     //end:"center 30%",
     markers:false,
     toggleClass:"red",//style background using css//
@@ -208,6 +208,21 @@ gsap.to(".abouts",{
 
     
 })
+
+gsap.to(".abouts-info", {
+  y: 100,
+  duration: 2,
+  scrollTrigger: {
+    trigger: '.abouts',
+    start: "top top", // Ensure the animation starts when the top of .abouts reaches the top of the viewport
+    markers: false, // Set to true to show markers for debugging
+    toggleClass: "red", // Add or remove the class "red" when scrolling
+    toggleActions: "restart none none none", // Actions when reaching the trigger point
+    scrub: 1 // Smooth animation tied to scroll
+  }
+});
+
+
 
 gsap.to(".one", {
   duration: 2,
@@ -222,6 +237,8 @@ gsap.to(".one", {
     scrub: 3,
   }
 });
+
+
 
 //scroll reveal animation//
 
