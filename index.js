@@ -210,7 +210,7 @@ gsap.to(".abouts",{
 })
 
 gsap.to(".abouts-info", {
-  y: 100,
+  y: 50,
   duration: 2,
   scrollTrigger: {
     trigger: '.abouts',
