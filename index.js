@@ -209,21 +209,6 @@ gsap.to(".abouts",{
     
 })
 
-gsap.to(".abouts-info", {
-  y: 50,
-  duration: 2,
-  scrollTrigger: {
-    trigger: '.abouts',
-    start: "top top", // Ensure the animation starts when the top of .abouts reaches the top of the viewport
-    markers: false, // Set to true to show markers for debugging
-    toggleClass: "red", // Add or remove the class "red" when scrolling
-    toggleActions: "restart none none none", // Actions when reaching the trigger point
-    scrub: 1 // Smooth animation tied to scroll
-  }
-});
-
-
-
 gsap.to(".one", {
   duration: 2,
   scrollTrigger: {
