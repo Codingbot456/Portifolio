@@ -1395,28 +1395,28 @@ position: absolute;
 
 
 .main-hero-serv{
-display: grid;
+    min-width: 100%;
+    display: grid;
     place-content: center;
     align-items: center;
-    width: 100%;
     position: absolute;
+    left: 0;
     top: 60%;
-    padding: 20px;
-   
+    margin-left:51px;
+  
 }
 
 .hero-about-servs{
-width: 100%;
-color: white;
-
+    width: 91%;
 display: grid;
 place-content: center;
 align-items: center;
 text-align:center;
-
 }
 .hero-about-servs p1{
    text-align: center;
+   background-color: var(--universalfont);
+   color: var(--background);
   
 
 
@@ -1497,15 +1497,16 @@ border-radius: 7px;
 .my-serv p2::before{
     content: '{';
         padding: 2px;
-        color: white;
+        color: var(--hover);
 }
 .my-serv p2::after{
     content: '}';
         padding: 2px;
-        color: white;
+        color: var(--hover);
 }
 .my-serv p3{
     font-size:2em;
+    color: var(--title);
 }
 
 
@@ -1542,14 +1543,18 @@ border-radius: 7px;
     color: white;
 display: grid;
 place-content: center;
-background: rgba( 239, 4, 4, 0.1 );
+background: transparent;
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 15px );
 -webkit-backdrop-filter: blur( 15px );
 border-radius: 10px;
-border-left: 1px solid rgba( 255, 255, 255, 0.18 );
 padding: 20px;
     
+}
+.career,.web-dev,.editor,.digital,.customer,.writer,.graphic{
+
+} h3{
+    color: var(--title);
 }
 .university{
    
@@ -1576,24 +1581,26 @@ padding: 20px;
     align-items: center;
     font-size: 2em;
     font-weight: 600;
+   
 }
 .spe div span{
     background-color: black;
     padding: .3px;
 }
 #statistics{
-   background-image: url(images/statistics.jpg);
+   background-image: url(images/sta.jpeg);
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
     color: white;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     height:350px;
 
 }
 #applied{
-    background-image: url(images/applied.png);
+    background-image: url(images/applied.jpg);
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -1794,12 +1801,13 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .graphic{
-    background: rgba( 34, 228, 28, 0.15 );
+    background: transparent;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: none;
+    border-top: 1px solid rgba( 255, 255, 255, 0.18 );
     color: white;
     margin-left: 51px;
     display: grid;
@@ -1819,7 +1827,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 10px;
 }
 .graphic h3{
-    color: var(--present);
+    color: var(--title);
 }
 .graphic h4{
     color: red;
@@ -1874,12 +1882,13 @@ background-image: url(images/hyptic.jpg);
 
 }
 .digital{
-    background: rgba( 84, 95, 190, 0.15 );
+    background: transparent;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: none;
+    border-top: 1px solid rgba( 255, 255, 255, 0.18 );
   
     color: white;
     margin-left: 51px;
@@ -1890,25 +1899,27 @@ background-image: url(images/hyptic.jpg);
     padding: 20px;
 }
 .marketing div{
-    color: var(--universalfont);
+    color:var(--present);
     font-size: 1.5em;
 }
+ 
 .marketing div:before{
     content: '*';
     font-size: 2.5em;
-    color:red;
+    color:var(--hover);
     display: block;
     padding:5px;
 
 
 }
 .customer{
-    background: rgba( 215, 67, 36, 0.15 );
+    background: transparent;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: none;
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.18 );
     color: white;
     margin-left: 51px;
     display: grid;
@@ -1930,6 +1941,9 @@ background-image: url(images/hyptic.jpg);
 }
 .customer-services span{
     color: var(--universalfont);
+    background-color:var(--present);
+    font-weight: 300;
+    font-weight: 2em;
 }
 
 .customer-services i {
@@ -1940,13 +1954,14 @@ background-image: url(images/hyptic.jpg);
 
 
 .writer{
-    background: rgba( 232, 18, 193, 0.15 );
+    background: transparent;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    color: var(--universalfont);
+    border: none;
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: var(--present);
     font-size: 1.2em;
     margin-left: 51px;
     display: grid;
@@ -1956,11 +1971,13 @@ background-image: url(images/hyptic.jpg);
     padding: 30px;
     display: grid;
     gap: 30px;
+   
 }
 .writings{
     display: flex;
     flex-wrap: wrap-reverse;
     gap: 30px;
+    font-size: 1.7em;
 }
 .writings div:before{
     content: '>';
@@ -1973,7 +1990,7 @@ background-image: url(images/hyptic.jpg);
 .write-btn{
     justify-self: center;
     background-color: var(--title);
-    color: white;
+    color: var(--background);
     width: 150px;
     height:60px;
     padding: 10px;
