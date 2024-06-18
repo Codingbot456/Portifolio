@@ -14,40 +14,40 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 $("#all").click(function(){
-  $(".app,.game,.web,h3").show();
+  $(".web,#gallery,#graphics,h3,p1").show();
   
 });
 });
 
-
-
-$(document).ready(function(){
-$("#app").click(function(){
-  $(".app").show();
-  $(".game,.web ,h3").hide();
-  
-});
-});
-
-
-
-$(document).ready(function(){
-
-$("#game").click(function(){
-  $(".game").show();
-  $(".app,.web").hide();
-  
-});
-});
 
 
 $(document).ready(function(){
 $("#web").click(function(){
   $(".web").show();
-  $(".app,.game").hide();
+  $("#gallery,#graphics,h3,p1").hide();
   
 });
 });
+
+
+
+$(document).ready(function(){
+  $("#graph").click(function(){
+    $("#graphics").show();
+    $("#gallery,.web,h3,p1").hide();
+    
+  });
+  });
+
+  $(document).ready(function(){
+    $("#gall").click(function(){
+      $("#gallery").show();
+      $("#graphics,.web,h3,p1").hide();
+      
+    });
+    });
+
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000);
 camera.position.set(-900, -200, -900);
@@ -272,45 +272,48 @@ res=>{
 .catch((err)=>console.log("err"))
 }
 
-// scripts.js
-const slides = document.querySelectorAll('.slide');
-const sliderWrapper = document.querySelector('.slider-wrapper');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const dots = document.querySelectorAll('.dot');
 
-let currentIndex = 0;
 
-function showSlide(index) {
-    if (index >= slides.length) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = slides.length - 1;
-    } else {
-        currentIndex = index;
-    }
-    sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-    updateDots();
-}
+document.querySelectorAll('.portfolio-projects').forEach((portfolio, portfolioIndex) => {
+  const slides = portfolio.querySelectorAll('.slide');
+  const sliderWrapper = portfolio.querySelector('.slider-wrapper');
+  const prevButton = portfolio.querySelector('.prev');
+  const nextButton = portfolio.querySelector('.next');
+  const dots = portfolio.querySelectorAll('.dot');
 
-function updateDots() {
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[currentIndex].classList.add('active');
-}
+  let currentIndex = 0;
 
-prevButton.addEventListener('click', () => {
-    showSlide(currentIndex - 1);
+  function showSlide(index) {
+      if (index >= slides.length) {
+          currentIndex = 0;
+      } else if (index < 0) {
+          currentIndex = slides.length - 1;
+      } else {
+          currentIndex = index;
+      }
+      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      updateDots();
+  }
+
+  function updateDots() {
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+  }
+
+  prevButton.addEventListener('click', () => {
+      showSlide(currentIndex - 1);
+  });
+
+  nextButton.addEventListener('click', () => {
+      showSlide(currentIndex + 1);
+  });
+
+  dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+          const slideIndex = e.target.getAttribute('data-slide');
+          showSlide(parseInt(slideIndex));
+      });
+  });
+
+  showSlide(currentIndex);
 });
-
-nextButton.addEventListener('click', () => {
-    showSlide(currentIndex + 1);
-});
-
-dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-        const slideIndex = e.target.getAttribute('data-slide');
-        showSlide(parseInt(slideIndex));
-    });
-});
-
-showSlide(currentIndex);
