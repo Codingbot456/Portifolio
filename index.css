@@ -1296,7 +1296,7 @@ position: absolute;
     height: 250px;
     transition:.5s ease;
 }
-.web img ,.graphic img{
+.web img ,.graphic img, .app img{
     max-width: 350px;
 }
 .all img:hover{
@@ -1323,25 +1323,34 @@ position: absolute;
    flex-wrap: wrap;
   
 }
-.web div{
+.web,.app{    
+ div{
     display: grid;
     place-content: center;
 
 }
-.web div p3{
+}
+.web,.app{
+     div p3{
     text-align:center;
     
-    color:var(--title);
+    color:var(--present);
     
     font-size:1.8em;
   
 }
-.web div a{
+}
+
+.web,.app{
+ div a{
     text-decoration: none;
     color: var(--universalfont);
     justify-self: center;
 }
-.web div button{
+}
+
+.web ,.app{
+ div button{
     height:50px;
     width: 130px;
     font-size: 2em;
@@ -1349,10 +1358,21 @@ position: absolute;
     background-color: var(--universalfont);
     margin-top: 3%;
 }
-.web div button:hover{
+}
+
+.web,.app{
+ div button:hover{
     background-color:var(--hover);
     color: white;
 }
+}
+
+#gallery{
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .justified-grid-gallery {
     --space: 4px;
     --min-height: 160px;
@@ -1584,36 +1604,52 @@ padding: 20px;
    
 }
 .spe div span{
-    background-color: black;
     padding: .3px;
+    color: var(--hover);
+    backdrop-filter: blur(10PX);
+    color: var(--present);
+    margin-top:20%;
+    
+  
 }
-#statistics{
-   background-image: url(images/sta.jpeg);
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
+
+#statistics {
+    background-image: url(images/sta.jpeg);
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
     color: white;
     width: 100%;
     max-width: 350px;
-    height:350px;
-
-}
+    height: 350px;
+ }
+ 
 #applied{
     background-image: url(images/applied.jpg);
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    color: white;
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
 }
 #pure{
     background-image: url(images/pure.jpg);
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    color: white;
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
 }
-
 .resume{
     background-color: red;
     margin-left: 51px;
@@ -1755,6 +1791,22 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 #card5{
     background: rgba( 34, 228, 28, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1px );
+-webkit-backdrop-filter: blur( 1px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#card6{
+    background: rgba(126, 140, 125, 0.15);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1px );
+-webkit-backdrop-filter: blur( 1px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#card7{
+    background: rgba(127, 189, 210, 0.15);
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 1px );
 -webkit-backdrop-filter: blur( 1px );

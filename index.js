@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 $("#all").click(function(){
-  $(".web,#gallery,#graphics,h3,p1").show();
+  $(".web,#gallery,.app,#graphics,h3,p1").show();
   
 });
 });
@@ -24,7 +24,7 @@ $("#all").click(function(){
 $(document).ready(function(){
 $("#web").click(function(){
   $(".web").show();
-  $("#gallery,#graphics,h3,p1").hide();
+  $("#gallery,#graphics,.app,h3,p1").hide();
   
 });
 });
@@ -34,7 +34,7 @@ $("#web").click(function(){
 $(document).ready(function(){
   $("#graph").click(function(){
     $("#graphics").show();
-    $("#gallery,.web,h3,p1").hide();
+    $("#gallery,.web,.app,h3,p1").hide();
     
   });
   });
@@ -42,12 +42,23 @@ $(document).ready(function(){
   $(document).ready(function(){
     $("#gall").click(function(){
       $("#gallery").show();
-      $("#graphics,.web,h3,p1").hide();
+      $("#graphics,.web,h3,p1,.app").hide();
       
     });
     });
 
+    $(document).ready(function(){
+      $("#app").click(function(){
+        $(".app").show();
+        $("#graphics,#gallery,.web,h3,p1").hide();
+        
+      });
+      });
 
+    
+
+
+    
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000);
 camera.position.set(-900, -200, -900);
