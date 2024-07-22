@@ -168,6 +168,11 @@ body{
     font-size: 1.2em;
     font-weight: 400;
 }
+.togller:hover{
+    background-color: var(--background);
+    scale:.8;
+    font-weight: 600;
+}
 .toggler-items{
    height: auto;
     min-width:100%;
